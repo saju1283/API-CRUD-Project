@@ -1,58 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/ui/screens/change_password_screen.dart';
-import 'package:task_manager/ui/screens/forgot_password_email_screen.dart';
-import 'package:task_manager/ui/screens/pin_verification_screen.dart';
-import 'package:task_manager/ui/screens/sign_in_screen.dart';
-import 'package:task_manager/ui/screens/splash_screen.dart';
+import 'package:ostad_batch_10/statefull_class.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'flutter_class_1.dart';
+import 'flutter_class_2.dart';
+import 'form_login.dart';
+import 'module 9 class 3.dart';
+import 'module_11/class_1/alert/alert.dart';
+import 'module_11/class_1/lifeCycle.dart';
+import 'module_11/class_2/calculatorApp.dart';
+import 'module_11/class_3/waterTracker.dart';
+import 'module_12/class_1.dart';
+import 'module_12/class_2.dart';
+import 'module_12/class_3.dart';
+import 'module_13/module13.dart';
+import 'module_9_class_2.dart';
+import 'module_9_mediaQuery.dart';
+import 'module_9_todo.dart';
 
-import 'ui/screens/sign_up_screen.dart';
-
-class TaskManagerApp extends StatelessWidget {
-  const TaskManagerApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        colorSchemeSeed: Colors.green,
-        textTheme: TextTheme(
-          titleLarge: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          fillColor: Colors.white,
-          filled: true,
-          contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          hintStyle: TextStyle(color: Colors.grey),
-          border: OutlineInputBorder(borderSide: BorderSide.none),
-          enabledBorder: OutlineInputBorder(borderSide: BorderSide.none),
-          focusedBorder: OutlineInputBorder(borderSide: BorderSide.none),
-          errorBorder: OutlineInputBorder(borderSide: BorderSide.none),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            fixedSize: Size.fromWidth(double.maxFinite),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            padding: EdgeInsets.symmetric(vertical: 12),
-            backgroundColor: Colors.green,
-            foregroundColor: Colors.white,
-          ),
-        ),
-        textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(foregroundColor: Colors.green),
-        ),
-      ),
-      initialRoute: '/',
-      routes: {
-        SplashScreen.name : (context) => SplashScreen(),
-        SignInScreen.name: (context) => SignInScreen(),
-        SignUpScreen.name: (context) => SignUpScreen(),
-        ForgotPasswordEmailScreen.name:
-            (context) => ForgotPasswordEmailScreen(),
-        PinVerificationScreen.name: (context) => PinVerificationScreen(),
-        ChangePasswordScreen.name: (context) => ChangePasswordScreen()
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_ , child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'First Method',
+          // You can use the library anywhere in the app even in theme
+          home: child,
+        );
       },
+      child: const Module13(),
     );
   }
+
 }
